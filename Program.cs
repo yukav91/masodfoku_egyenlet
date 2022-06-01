@@ -14,10 +14,24 @@ namespace test1
             b = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Kérlek, add meg a 'c' értékét:");
             c = Convert.ToDouble(Console.ReadLine());
-            d = b * b - 4 * a * c;
-            x1 = (-b + Math.Sqrt(d)) / (2 * a);
-            x2 = (-b - Math.Sqrt(d)) / (2 * a);
-            Console.WriteLine("\nAz x1 értéke: " + x1 + "\nAz x2 értéke: " + x2);            
+            if (a == 0)
+            {
+                Console.WriteLine("Az egyenlet nem másodfokú");
+            }
+            else
+            {
+                d = b * b - 4 * a * c;
+                if (d < 0)
+                {
+                    Console.WriteLine("Nincs valós megoldás");
+                }
+                else
+                {
+                    x1 = (-b + Math.Sqrt(d)) / (2 * a);
+                    x2 = (-b - Math.Sqrt(d)) / (2 * a);
+                    Console.WriteLine("\nAz x1 értéke: " + x1 + "\nAz x2 értéke: " + x2);
+                }
+            }
         }
     }
 }
